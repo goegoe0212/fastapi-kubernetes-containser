@@ -1,7 +1,7 @@
 # ビルドには公式のPythonイメージslim版を使用
 FROM python:3.11.9-slim-bookworm AS base
 WORKDIR /usr/src/app
-ENV PATH /root/.local/bin:$PATH
+ENV PATH=/root/.local/bin:$PATH
 
 RUN apt-get -y update && \
     apt-get -y dist-upgrade
