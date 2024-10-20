@@ -1,6 +1,6 @@
 services:
   fastapi:
-    image: fastapi-docker:production
+    image: goegoe0212/fastapi-kubernetes:0.1.0
     build:
       context: .
       dockerfile: Dockerfile
