@@ -8,8 +8,8 @@ app = FastAPI(
     title=settings.title,
     description=settings.description,
     version=settings.version,
-    openapi_url=settings.openapi_url,
-    docs_url=settings.docs_url,
+    openapi_url=settings.prefix_url + settings.openapi_url,
+    docs_url=settings.prefix_url + settings.docs_url,
     redoc_url=None,
 )
 

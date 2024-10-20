@@ -3,3 +3,10 @@ services:
     build:
       context: .
       dockerfile: Dockerfile
+    environment:
+      - title=FastAPIのテストAPI
+      - description=My App Description
+      - version=0.1.0
+      - openapi_url=/openapi.json
+      - docs_url=/docs
+      - prefix_url=/test
