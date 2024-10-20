@@ -48,4 +48,4 @@ COPY --chown=nonroot:nonroot ./app /usr/src/app
 
 USER nonroot
 
-CMD ["/usr/local/bin/uvicorn", "main:app", "--host", "0.0.0.0", "--port", "80"]
+CMD ["/usr/local/bin/uvicorn", "main:app", "--host", "0.0.0.0", "--port", "8000"]
