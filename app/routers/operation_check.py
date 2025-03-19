@@ -17,3 +17,8 @@ def get_status() -> JSONResponse:
 
     response = {"hostname": host, "ip": ip}
     return JSONResponse(response)
+
+@router.get("/operation/gzip-test")
+def gzip_test() -> JSONResponse:
+    large_data = {"data": "x" * 10000}  # 大きなデータを生成
+    return JSONResponse(large_data)
