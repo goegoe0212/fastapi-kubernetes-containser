@@ -16,7 +16,7 @@ RUN apt-get -y install --no-install-recommends \
 # キャッシュを効かせるためにpyproject.tomlだけ先にコピー
 COPY ./app/pyproject.toml /usr/src/app/pyproject.toml
 
-RUN poetry install --no-dev
+RUN poetry install --without dev
 
 FROM base AS develop
 
