@@ -3,7 +3,7 @@ name: Test on PR
 on:
   pull_request:
     branches:
-      - feature/*
+      - release/*
 
 jobs:
   build_docker_image_and_test:
