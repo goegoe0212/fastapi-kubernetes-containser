@@ -1,5 +1,5 @@
 # ビルドには公式のPythonイメージslim版を使用
-FROM python:3.11.9-slim-bookworm AS base
+FROM python:3.11.12-slim-bookworm AS base
 WORKDIR /usr/src/app
 ENV PATH=/root/.local/bin:$PATH
 
