@@ -3,10 +3,10 @@ name: Test on PR
 on:
   pull_request:
     branches:
-      - main
+      - release/*
 
 jobs:
-  build_and_test:
+  build_docker_image_and_test:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout code
@@ -29,6 +29,6 @@ jobs:
         run: |
           docker run --rm test-image:latest ruff check
 
-      - name: Run rugg format
+      - name: Run ruff format
         run: |
           docker run --rm test-image:latest ruff format
