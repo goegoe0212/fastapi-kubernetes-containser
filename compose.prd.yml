@@ -19,7 +19,7 @@ services:
     ports:
       - "8000:8000"
     depends_on:
-      - redis
+      - redis-service
   
   redis-service:
     image: redis:alpine

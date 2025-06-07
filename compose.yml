@@ -16,7 +16,7 @@ services:
     stdin_open: true
     command: /bin/bash
     depends_on:
-      - redis
+      - redis-service
 
   redis-service:
     image: redis:alpine
