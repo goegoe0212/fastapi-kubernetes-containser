@@ -1,8 +1,10 @@
 services:
   fastapi:
+    image: fastapi-docker:develop
     build:
       context: .
       dockerfile: Dockerfile
+      target: develop
     environment:
       - title=FastAPIのテストAPI
       - description=My App Description
@@ -10,3 +12,6 @@ services:
       - openapi_url=/openapi.json
       - docs_url=/docs
       - prefix_url=/test
+    tty: true
+    stdin_open: true
+    command: /bin/bash

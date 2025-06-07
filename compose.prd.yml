@@ -1,13 +1,20 @@
 services:
   fastapi:
-    image: goegoe0212/fastapi-kubernetes:0.1.0
+    image: goegoe0212/fastapi-kubernetes
     build:
       context: .
       dockerfile: Dockerfile
       target: production
+    environment:
+      - title=FastAPIのテストAPI
+      - description=My App Description
+      - version=0.1.0
+      - openapi_url=/openapi.json
+      - docs_url=/docs
+      - prefix_url=/test
     logging:
       driver: "json-file"
       options:
         max-size: "10m"
     ports:
-      - "80:80"
+      - "8000:8000"
