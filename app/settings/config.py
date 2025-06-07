@@ -9,6 +9,7 @@ class Settings(BaseSettings):
     openapi_url: str = Field(default="/openapi.json")
     docs_url: str = Field(default="/docs")
     prefix_url: str = Field(default="")
+    output_dir: str = Field(default="/data")
 
 
 settings = Settings()
