@@ -4,7 +4,9 @@ WORKDIR /usr/src/app
 ENV PATH=/root/.local/bin:$PATH
 
 RUN apt-get -y update && \
-    apt-get -y dist-upgrade
+    apt-get -y dist-upgrade && \
+    apt-get -y install --no-install-recommends ffmpeg && \
+    apt-get clean && rm -rf /var/lib/apt/lists/*
 
 FROM base AS build
 
