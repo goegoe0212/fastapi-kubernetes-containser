@@ -10,7 +10,8 @@ RUN apt-get -y update && \
 
 FROM base AS build
 
-RUN apt-get -y install --no-install-recommends \
+RUN apt-get -y update && \
+    apt-get -y install --no-install-recommends \
     curl && \
     curl -sSL https://install.python-poetry.org | python3 - && \
     poetry config virtualenvs.create false
@@ -22,7 +23,8 @@ RUN poetry install --without dev
 
 FROM base AS develop
 
-RUN apt-get -y install --no-install-recommends \
+RUN apt-get -y update && \
+    apt-get -y install --no-install-recommends \
     git && \
     apt-get autoclean -y && apt-get clean && rm -rf /var/cache/apt/* /var/lib/apt/lists/*
 
