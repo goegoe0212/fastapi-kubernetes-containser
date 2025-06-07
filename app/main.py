@@ -5,10 +5,12 @@ from settings.config import settings
 from routers import operation_check, youtube_download_router
 from modules.redis_module import RedisConnector
 
+
 @asynccontextmanager
 async def lifespan(app: FastAPI):
-    app.state.redis = RedisConnector().get_connection() 
+    app.state.redis = RedisConnector().get_connection()
     yield
+
 
 app = FastAPI(
     title=settings.title,
