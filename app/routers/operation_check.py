@@ -1,8 +1,15 @@
 import socket
 from fastapi import APIRouter
-from fastapi.responses import JSONResponse
+from fastapi.responses import JSONResponse, RedirectResponse
+from settings.config import settings
 
-router = APIRouter()
+router = APIRouter(tags=["Operation Check"])
+
+
+@router.get("/", include_in_schema=False)
+def index() -> RedirectResponse:
+    return RedirectResponse(url=f"{settings.prefix_url}/docs")
+
 
 @router.get("/operation")
 def hello_world() -> JSONResponse:
@@ -17,6 +24,7 @@ def get_status() -> JSONResponse:
 
     response = {"hostname": host, "ip": ip}
     return JSONResponse(response)
+
 
 @router.get("/operation/gzip-test")
 def gzip_test() -> JSONResponse:

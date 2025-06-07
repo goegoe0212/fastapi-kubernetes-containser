@@ -10,4 +10,5 @@ class Settings(BaseSettings):
     docs_url: str = Field(default="/docs")
     prefix_url: str = Field(default="")
 
+
 settings = Settings()
