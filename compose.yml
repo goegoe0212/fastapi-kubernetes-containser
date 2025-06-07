@@ -15,3 +15,10 @@ services:
     tty: true
     stdin_open: true
     command: /bin/bash
+    depends_on:
+      - redis
+
+  redis:
+    image: redis:alpine
+    environment:
+      - TZ=Asia/Tokyo
