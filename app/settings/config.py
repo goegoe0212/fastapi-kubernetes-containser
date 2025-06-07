@@ -11,7 +11,7 @@ class Settings(BaseSettings):
     prefix_url: str = Field(default="")
     output_dir: str = Field(default="/data")
 
-    redis_host: str = Field(default="redis")
+    redis_host: str = Field(default="redis-service")
     redis_port: int = Field(default=6379)
     redis_max_connections: int = Field(default=10)
 
